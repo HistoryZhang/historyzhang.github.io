@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Github源码推荐(1.22~1.28)]]></title>
+    <url>%2F2018%2F01%2F27%2FGithub%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.22-1.28)%2F</url>
+    <content type="text"><![CDATA[除了推荐一些源码，如果遇到其他相关我也会推荐给大家，排名来自于心情。 一、英语进阶指南夫人最近也在学习英语，不知道这个对她是否有用呢？ 英语作为一门语言，学习起来应该是一件比较自然而然的事情，就像我们自然而然地学会汉语那样。 效果图 热度1Star: 7800+ Github主页https://github.com/byoungd/English-level-up-tips-for-Chinese 二、春节即将来临，是否有小伙伴再开始抢票了呢？如果你使用的是Mac系统，那就试试这个吧，专为Mac OS打造的12306 订票/捡票 助手。效果图 热度1Star: 2000+ Github主页https://github.com/fancymax/12306ForMac 三、习惯了OC下的YYModel等Dictionary转Model工具，在Swift下是否不适应呢？试试SwiftyJSON吧，一定会为你带来更好的体验。热度1Star: 16000+ CocoaPods1pod &apos;SwiftyJSON&apos; Carthage1github &quot;SwiftyJSON/SwiftyJSON&quot; Github主页https://github.com/SwiftyJSON/SwiftyJSON 四、是否厌倦了Toast一成不变的样式呢？你可以试试NotificationBanner，漂亮的动画样式，新颖的交互体验。效果图 热度1Star: 1700+ CocoaPods1pod &apos;NotificationBannerSwift&apos; Carthage1github &quot;Daltron/NotificationBanner&quot; &quot;master&quot; Github主页https://github.com/Daltron/NotificationBanner 好了，暂时就推荐这么多给大家，下周我们再见。 PS：本文中图片部分皆来自于作者Github主页，如有侵权，请告知。]]></content>
+      <categories>
+        <category>源码</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Github源码推荐(1.15~1.21)]]></title>
-    <url>%2F2018%2F01%2F21%2FGithub%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90-(1.15~1.21)%2F</url>
+    <url>%2F2018%2F01%2F21%2FGithub%E6%BA%90%E7%A0%81%E6%8E%A8%E8%8D%90(1.15~1.21)%2F</url>
     <content type="text"><![CDATA[大家好，一周时间过得真快，本次主题依旧，推荐一些Github上的源码，排名不分先后。 一、答题App莫名的火了起来，随之而来的则是一系列的辅助软件，例如搜狗、百度，先后推出辅助答题助手。这档子事自然少不了广大程序员Show一把的场面，下面推荐的就是使用OCR做的辅助答题助手。 特点 使用手机模拟器，快速识别~ 浏览器自动搜索显示结果，搜索引擎可配置，结果一目了然~ 模拟器还能多开哦~全部答对奖金翻倍，遇到不会的可以多选乱蒙 万英雄/知识超人/冲顶大会都支持哦~ 效果图 热度1Star: 800+ Github主页https://github.com/rrdssfgcs/wenda-helper 二、上一周给大家推荐了一个Objective-C的日历，这次给大家推荐一个Swift4的日历控件，作者写的非常好棒，支持Storyboard。效果图 热度1Star: 2800+ CocoaPods1pod &apos;CVCalendar&apos;, &apos;~&gt; 1.6.0&apos; Github主页https://github.com/CVCalendar/CVCalendar 三、使用Swift的时候是不是需要写好多的Extension呢？使用这个开源库后就再也不用劳心劳力的写很多的Extension了。 SwifterSwift is a collection of over 500 native Swift extensions, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS. 简直不要太强大，而且支持Swift4。 热度1Star: 4200+ CocoaPods1pod &apos;SwifterSwift&apos; 你也可以只集成部分Extension，例如1pod &apos;SwifterSwift/Foundation&apos; 具体还是去作者主页看吧。 Carthage1github &quot;SwifterSwift/SwifterSwift&quot; ~&gt; 4.0 Github主页https://github.com/SwifterSwift/SwifterSwift 四、基本上所有的App都逃脱不了表单，设置、用户界面等待，都是一些枯燥无味的代码，却又要花费时间、精力去自定义每个Cell达到各式各样的效果，此次为大家推荐一个强大的表单开源库，最重要的是OC和Swift都有，各取所需。 OC版 效果图 热度1Star: 4800+ CocoaPods1pod &apos;XLForm&apos;, &apos;~&gt; 4.0&apos; Carthage1github &quot;xmartlabs/XLForm&quot; ~&gt; 4.0 Github主页https://github.com/xmartlabs/XLForm Swift版 效果图 热度1Star: 7500+ CocoaPods1pod &apos;Eureka&apos; Carthage1github &quot;xmartlabs/Eureka&quot; ~&gt; 4.0 Github主页https://github.com/xmartlabs/Eureka 关于使用方法这里就不再介绍了，项目主页上介绍的非常清楚，有需求的小伙伴就自己去查看吧~ 好了，暂时就推荐这么多给大家，下周我们再见。 PS：本文中图片部分皆来自于作者Github主页，如有侵权，请告知。]]></content>
       <categories>
         <category>源码</category>
@@ -42,9 +53,9 @@
         <category>iOS</category>
       </categories>
       <tags>
-        <tag>自动打包</tag>
         <tag>xcodebuild</tag>
         <tag>Jenkins</tag>
+        <tag>自动打包</tag>
         <tag>Xcode9</tag>
       </tags>
   </entry>
@@ -311,8 +322,8 @@
         <category>iOS</category>
       </categories>
       <tags>
-        <tag>shell</tag>
         <tag>自动打包</tag>
+        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
