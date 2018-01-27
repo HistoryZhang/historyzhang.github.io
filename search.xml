@@ -53,9 +53,9 @@
         <category>iOS</category>
       </categories>
       <tags>
+        <tag>自动打包</tag>
         <tag>xcodebuild</tag>
         <tag>Jenkins</tag>
-        <tag>自动打包</tag>
         <tag>Xcode9</tag>
       </tags>
   </entry>
@@ -322,8 +322,8 @@
         <category>iOS</category>
       </categories>
       <tags>
-        <tag>自动打包</tag>
         <tag>shell</tag>
+        <tag>自动打包</tag>
       </tags>
   </entry>
   <entry>
