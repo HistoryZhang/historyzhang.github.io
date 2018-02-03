@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。 12345678910static id _instance;    + (instancetype)sharedInstance  &amp;#123;       static dispatch_once_t once">
+<meta name="description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。">
 <meta name="keywords" content="单例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS创建单例">
 <meta property="og:url" content="https://historyzhang.github.io/2016/11/01/iOS创建单例/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。 12345678910static id _instance;    + (instancetype)sharedInstance  &amp;#123;       static dispatch_once_t once">
+<meta property="og:description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:48:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS创建单例">
-<meta name="twitter:description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。 12345678910static id _instance;    + (instancetype)sharedInstance  &amp;#123;       static dispatch_once_t once">
+<meta name="twitter:description" content="在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。 一般来说，我还是喜欢用GCD来创建单例，使用dispatch_once很方便。">
 
 
 
@@ -397,8 +397,7 @@
 
       
         <p>在开发过程中经常会遇到需要单例的时候，然后很多时候大家写的单例其实并不符合要求。下面介绍一个标准的单例。</p>
-<p>一般来说，我还是喜欢用<code>GCD</code>来创建单例，使用<code>dispatch_once</code>很方便。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">static id _instance;   </span><br><span class="line"> </span><br><span class="line">+ (instancetype)sharedInstance  </span><br><span class="line">&#123;   </span><br><span class="line">    static dispatch_once_t onceToken;   </span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;   </span><br><span class="line">        _instance = [[self alloc] init];   </span><br><span class="line">    &#125;);   </span><br><span class="line">    return _instance;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一般来说，我还是喜欢用<code>GCD</code>来创建单例，使用<code>dispatch_once</code>很方便。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">static id _instance;   </span><br><span class="line"> </span><br><span class="line">+ (instancetype)sharedInstance  </span><br><span class="line">&#123;   </span><br><span class="line">    static dispatch_once_t onceToken;   </span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;   </span><br><span class="line">        _instance = [[self alloc] init];   </span><br><span class="line">    &#125;);   </span><br><span class="line">    return _instance;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上面说的并不符合要求就是这样创建出来的单例。很多人以为这样就可以了，<code>dispatch_once</code>保证了只运行一次。然而，如果一个不知情的人调用了你写的类，你无法保证他不去调用<code>alloc</code>，<code>copy</code>来生成实例。<br>所以我们还要做一些其他的处理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">+ (instancetype)allocWithZone:(struct _NSZone *)zone  </span><br><span class="line">&#123;   </span><br><span class="line">    static dispatch_once_t onceToken;   </span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;   </span><br><span class="line">        _instance = [super allocWithZone:zone];   </span><br><span class="line">    &#125;);   </span><br><span class="line">    return _instance;   </span><br><span class="line">&#125;   </span><br><span class="line"> </span><br><span class="line">- (id)copyWithZone:(NSZone *)zone   </span><br><span class="line">&#123;   </span><br><span class="line">    return _instance;   </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line">- (id)mutableCopyWithZone:(NSZone *)zone &#123;   </span><br><span class="line">    return _instance;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就可以了。</p>

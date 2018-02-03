@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-ac0a0a0c788747a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-7c81d9a2d4c0f347.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/606479-da5c33fac97fc3ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:48:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode9下自动化编译错误">
 <meta name="twitter:description" content="最近在使用CI平台打包时突然失败了，查看日志后发现是在exportArchive时失败了。之前一直都是好好地，升级了Xcode之后突然就不行了，提示如下信息：123error: exportArchive: &amp;quot;AppName.app&amp;quot; requires a provisioning profile with the Push Notifications and App Grou">
@@ -403,6 +403,7 @@
 
       
         <p>最近在使用<code>CI</code>平台打包时突然失败了，查看日志后发现是在<code>exportArchive</code>时失败了。之前一直都是好好地，升级了<code>Xcode</code>之后突然就不行了，提示如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: exportArchive: &quot;AppName.app&quot; requires a provisioning profile with the Push Notifications and App Groups features.</span><br><span class="line">Error Domain=IDEProvisioningErrorDomain Code=9</span><br><span class="line">&quot;AppName.app&quot; requires a provisioning profile with the Push Notifications and App Groups features.&quot; UserInfo=&#123;NSLocalizedDescription=&quot;AppName.app&quot; requires a provisioning profile with the Push Notifications and App Groups features., NSLocalizedRecoverySuggestion=Add a profile to the &quot;provisioningProfiles&quot; dictionary in your Export Options property list.&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>查阅资料后发现，在<code>Xcode9</code>下，<code>xcodebuild</code>需要配置更多的信息才能导出<code>ipa</code>，最主要的一个就是<code>provisioningProfiles</code>。<br>具体的操作步骤如下。</p>
 <ol>
 <li><p>使用<code>Xcode</code> <code>Archive</code>一个新的版本<br><img src="http://upload-images.jianshu.io/upload_images/606479-78a2269f27ebb3ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.png"></p>

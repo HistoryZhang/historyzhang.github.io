@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="张清的iOS开发随笔">
 <meta property="og:description" content="越来越发现博客访问速度超慢了,看了几篇博客说是google的问题,就把所有关于google的东西都删了,还是很慢.也参照过唐巧的技术博客象写程序一样写博客：搭建基于github的博客中:  主要是修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉，否则由于GFW的原因，将会造成页面load很慢。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:46:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub博客访问超慢解决">
 <meta name="twitter:description" content="越来越发现博客访问速度超慢了,看了几篇博客说是google的问题,就把所有关于google的东西都删了,还是很慢.也参照过唐巧的技术博客象写程序一样写博客：搭建基于github的博客中:  主要是修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉，否则由于GFW的原因，将会造成页面load很慢。">
@@ -399,7 +399,8 @@
         <p>越来越发现博客访问速度超慢了,看了几篇博客说是<code>google</code>的问题,就把所有关于<code>google</code>的东西都删了,还是很慢.也参照过<a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧</a>的技术博客<a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">象写程序一样写博客：搭建基于github的博客</a>中:</p>
 <ul>
 <li>主要是修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉，否则由于GFW的原因，将会造成页面load很慢。</li>
-<li>修改定制文件/source/_includes/custom/head.html 把google的自定义字体去掉，原因同上。</li>
+<li>修改定制文件/source/_includes/custom/head.html 把google的自定义字体去掉，原因同上。<a id="more"></a>
+</li>
 </ul>
 <p>可是发现还是很慢.最终测试发现每次加载其实是由于在加载汉字时很慢,加载英文,图片和数字倒是很快,再参考网上所说还是觉得使用了<code>google</code>的字体.所以决定还是找个博客看一下他们的字体是怎么设置的.</p>
 <p>于是进入了<a href="http://msching.github.io" target="_blank" rel="external">码农人生</a>的<code>GitHub</code>主页,然后进入<code>source</code>分支,找到<code>msching.github.io / source / _includes / head.html</code>这个文件,打开后和我的文件对比,发现他主要修改了这里:</p>

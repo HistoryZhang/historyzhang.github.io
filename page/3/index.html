@@ -559,11 +559,7 @@
 
       
         
-          
-          前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。
-其实我们查看UIScrollView的头文件就可以找到这段注释：
-123// 
-          ...
+          <p>前几天看到一篇文章，关于如何解决在一个<code>Vieww</code>中有多个<code>UIScrollView</code>或者<code>UIScrollView</code>子类时，点击<code>StatusBar</code>无法使<code>UIScrollView</code>返回到顶部的文章。总得思想是自定义一个<code>View</code>，然后覆盖在<code>StatusBar</code>上，给这个<code>View</code>添加点击事件。具体文章链接在<a href="http://www.cocoachina.com/ios/20150814/12949.html" target="_blank" rel="external">这里</a>。有兴趣的朋友可以看一下。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2015/08/21/UIScrollView点击StatusBar返回顶部失效的解决/#more" rel="contents">
@@ -720,18 +716,9 @@
 
       
         
-          
-          打个广告最近趁着稍闲,做了个APP,计算房贷和个税的.也不知道起个啥名字,暂时就叫 综合计算器.
-刚刚送上线.话说苹果审核真麻烦.又拖了我2个星期.
-如果有需要的话可以支持一下哦~
-当初做的时候也是处于懒得装两个APP,毕竟一个小功能,于是就有了这个综合版,顺便赚点外快.
-再来个二维码
-
-ps:
-1.如果你有好的命名可以发邮件给我哦~
-2.如果你想做安卓版也可以发邮件给我哦~
-3.如果你有其他想法
-          ...
+          <h2 id="打个广告"><a href="#打个广告" class="headerlink" title="打个广告"></a>打个广告</h2><p>最近趁着稍闲,做了个APP,计算房贷和个税的.也不知道起个啥名字,暂时就叫 <a href="https://itunes.apple.com/us/app/zong-he-ji-suan-qi-fang-dai/id995894882?l=zh&amp;ls=1&amp;mt=8" target="_blank" rel="external">综合计算器</a>.</p>
+<p>刚刚送上线.话说苹果审核真麻烦.又拖了我2个星期.</p>
+<p>如果有需要的话可以支持一下哦~<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2015/06/12/房贷个税一个都不能少/#more" rel="contents">
@@ -1185,15 +1172,8 @@ ps:
 
       
         
-          
-          汉字转拼音之前有很多人用的都是一个拼音库,pinyin.h和pinyin.m.用着还算方便吧.
-后来发现苹果的framework提供了方法.于是在这里记录下来.
-主要是用到这个方法:CFStringTransform.具体大家可以去头文件看看.这里就贴出代码了.
-- (NSString *)spelling
-{
-    if (self.length) {
-        NSMutableStr
-          ...
+          <p>汉字转拼音之前有很多人用的都是一个拼音库,<code>pinyin.h</code>和<code>pinyin.m</code>.用着还算方便吧.</p>
+<p>后来发现苹果的<code>framework</code>提供了方法.于是在这里记录下来.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/12/12/iOS汉字转拼音/#more" rel="contents">
@@ -1350,14 +1330,11 @@ ps:
 
       
         
-          
-          UITableView会有多余的分割线,不论是否有内容都会显示出来,看着很心塞.于是这样:
-
-设置UITableView的style为Group
-实现以下DataSource
-
-123456789- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section&#123;	return
-          ...
+          <p><code>UITableView</code>会有多余的分割线,不论是否有内容都会显示出来,看着很心塞.<br>于是这样:</p>
+<ul>
+<li>设置<code>UITableView</code>的<code>style</code>为<code>Group</code></li>
+<li>实现以下<code>DataSource</code></li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/12/04/UITableView多余分割线/#more" rel="contents">
@@ -1514,12 +1491,8 @@ ps:
 
       
         
-          
-          iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下.
-第一种方法拨打完之后会停留在拨号盘,不会返回应用。
-1[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&quot;tel://123456789&quot;]];
-第二种方法拨打玩电话后会返回应用，但是拨打之前会有一个UIAler
-          ...
+          <p>iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下.</p>
+<p>第一种方法拨打完之后会停留在拨号盘,不会返回应用。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/09/05/iOS拨打电话/#more" rel="contents">

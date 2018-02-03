@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。 其实我们查看UIScrollView的头文件就可以找到这段注释： 123//">
+<meta name="description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。">
 <meta name="keywords" content="ScrollView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UIScrollView点击StatusBar返回顶部失效的解决">
 <meta property="og:url" content="https://historyzhang.github.io/2015/08/21/UIScrollView点击StatusBar返回顶部失效的解决/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。 其实我们查看UIScrollView的头文件就可以找到这段注释： 123//">
+<meta property="og:description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:48:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIScrollView点击StatusBar返回顶部失效的解决">
-<meta name="twitter:description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。 其实我们查看UIScrollView的头文件就可以找到这段注释： 123//">
+<meta name="twitter:description" content="前几天看到一篇文章，关于如何解决在一个Vieww中有多个UIScrollView或者UIScrollView子类时，点击StatusBar无法使UIScrollView返回到顶部的文章。总得思想是自定义一个View，然后覆盖在StatusBar上，给这个View添加点击事件。具体文章链接在这里。有兴趣的朋友可以看一下。">
 
 
 
@@ -396,8 +396,7 @@
       
 
       
-        <p>前几天看到一篇文章，关于如何解决在一个<code>Vieww</code>中有多个<code>UIScrollView</code>或者<code>UIScrollView</code>子类时，点击<code>StatusBar</code>无法使<code>UIScrollView</code>返回到顶部的文章。总得思想是自定义一个<code>View</code>，然后覆盖在<code>StatusBar</code>上，给这个<code>View</code>添加点击事件。具体文章链接在<a href="http://www.cocoachina.com/ios/20150814/12949.html" target="_blank" rel="external">这里</a>。有兴趣的朋友可以看一下。</p>
-<p>其实我们查看<code>UIScrollView</code>的头文件就可以找到这段注释：</p>
+        <p>前几天看到一篇文章，关于如何解决在一个<code>Vieww</code>中有多个<code>UIScrollView</code>或者<code>UIScrollView</code>子类时，点击<code>StatusBar</code>无法使<code>UIScrollView</code>返回到顶部的文章。总得思想是自定义一个<code>View</code>，然后覆盖在<code>StatusBar</code>上，给这个<code>View</code>添加点击事件。具体文章链接在<a href="http://www.cocoachina.com/ios/20150814/12949.html" target="_blank" rel="external">这里</a>。有兴趣的朋友可以看一下。<br><a id="more"></a><br>其实我们查看<code>UIScrollView</code>的头文件就可以找到这段注释：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// When the user taps the status bar, the scroll view beneath the touch which is closest to the status bar will be scrolled to top, but only if its `scrollsToTop` property is YES, its delegate does not return NO from `shouldScrollViewScrollToTop`, and it is not already at the top.</span><br><span class="line">// On iPhone, we execute this gesture only if there&apos;s one on-screen scroll view with `scrollsToTop` == YES. If more than one is found, none will be scrolled.</span><br><span class="line">@property(nonatomic) BOOL  scrollsToTop;          // default is YES.</span><br></pre></td></tr></table></figure>
 <p>这样我们就可以很清楚的了解到，<code>scrollsToTop</code>的默认值是<code>YES</code>，然而当有多个<code>UIScrollView</code>的时候，用户点击<code>StatusBar</code>，系统就不知道让哪一个<code>UIScrollView</code>来执行<code>scrollsToTop</code>这个动作了，所以就导致失效了。</p>
 <p>这样一来，解决方法就很简单了，设置你想要执行<code>scrollsToTop</code>的<code>UIScrollView</code>的<code>@property(nonatomic) BOOL  scrollsToTop;</code>属性值为<code>YES</code>，其他的<code>UIScrollView</code>都为<code>NO</code>即可。</p>

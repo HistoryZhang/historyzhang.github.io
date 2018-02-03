@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。 123456789pod &amp;apos;AFNetworking’      // 不显式指定依赖库版本，表示每次都获取最新版本pod &amp;apos;AFNetworking’,  &amp;apos;2.0’     //只使用2.0版本pod &amp;apos;AFNetworking’, &amp;apos;&amp;gt;2.0&amp;apos;">
+<meta name="description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。">
 <meta name="keywords" content="CocoaPods">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Podfile引用第三方库设定版本">
 <meta property="og:url" content="https://historyzhang.github.io/2015/09/25/Podfile引用第三方库设定版本/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。 123456789pod &amp;apos;AFNetworking’      // 不显式指定依赖库版本，表示每次都获取最新版本pod &amp;apos;AFNetworking’,  &amp;apos;2.0’     //只使用2.0版本pod &amp;apos;AFNetworking’, &amp;apos;&amp;gt;2.0&amp;apos;">
+<meta property="og:description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:47:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Podfile引用第三方库设定版本">
-<meta name="twitter:description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。 123456789pod &amp;apos;AFNetworking’      // 不显式指定依赖库版本，表示每次都获取最新版本pod &amp;apos;AFNetworking’,  &amp;apos;2.0’     //只使用2.0版本pod &amp;apos;AFNetworking’, &amp;apos;&amp;gt;2.0&amp;apos;">
+<meta name="twitter:description" content="在使用cocoapods引用第三方库时，可以使用如下规则规定引用三方库的版本。">
 
 
 
@@ -397,6 +397,7 @@
 
       
         <p>在使用<code>cocoapods</code>引用第三方库时，可以使用如下规则规定引用三方库的版本。</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pod &apos;AFNetworking’      // 不显式指定依赖库版本，表示每次都获取最新版本</span><br><span class="line">pod &apos;AFNetworking’,  &apos;2.0’     //只使用2.0版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;&gt;2.0&apos;     //使用高于2.0的版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;&gt;=2.0&apos;     //使用大于或等于2.0的版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;&lt;2.0&apos;     //使用小于2.0的版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;&lt;=2.0&apos;     //使用小于或等于2.0的版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;~&gt;0.1.2&apos;     //使用大于等于0.1.2但小于0.2的版本，相当于&gt;=0.1.2并且&lt;0.2.0</span><br><span class="line">pod &apos;AFNetworking’, &apos;~&gt;0.1&apos;     //使用大于等于0.1但小于1.0的版本</span><br><span class="line">pod &apos;AFNetworking’, &apos;~&gt;0&apos;     //高于0的版本，写这个限制和什么都不写是一个效果，都表示使用最新版本</span><br></pre></td></tr></table></figure>
       
     </div>

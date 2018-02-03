@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。 1[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;tel://123456789&amp;quot;]]; 第二种方法拨打玩电话后会返回应用，但是拨打之前会有一个UIAler">
+<meta name="description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。">
 <meta name="keywords" content="电话">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS拨打电话">
 <meta property="og:url" content="https://historyzhang.github.io/2014/09/05/iOS拨打电话/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。 1[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;tel://123456789&amp;quot;]]; 第二种方法拨打玩电话后会返回应用，但是拨打之前会有一个UIAler">
+<meta property="og:description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:48:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS拨打电话">
-<meta name="twitter:description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。 1[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;tel://123456789&amp;quot;]]; 第二种方法拨打玩电话后会返回应用，但是拨打之前会有一个UIAler">
+<meta name="twitter:description" content="iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下. 第一种方法拨打完之后会停留在拨号盘,不会返回应用。">
 
 
 
@@ -398,6 +398,7 @@
       
         <p>iOS拨打电话公开的方法有两种,其他的是调用私有方法,是会被苹果拒绝的.下面记录一下.</p>
 <p>第一种方法拨打完之后会停留在拨号盘,不会返回应用。</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&quot;tel://123456789&quot;]];</span><br></pre></td></tr></table></figure>
 <p>第二种方法拨打玩电话后会返回应用，但是拨打之前会有一个<code>UIAlertView</code>提示是否拨打。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UIWebView *callWebview =[[UIWebView alloc] init]; // 如果无效,则将callWebView置为成员变量</span><br><span class="line">NSURL *telURL =[NSURL URLWithString:@&quot;tel:10086&quot;];</span><br><span class="line">[callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];</span><br><span class="line">[self.view addSubview:callWebview];</span><br></pre></td></tr></table></figure>

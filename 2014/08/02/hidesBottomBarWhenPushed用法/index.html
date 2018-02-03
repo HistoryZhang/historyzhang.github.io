@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人. 正文在使用TabBar的时候,需要在push到下个页面的时候隐藏TabBar,再pop回来的时候显示TabBar.以前有很多博客是说使用hidden参数,不过总是有黑边,遂又有一堆博客解决如何去掉黑边,甚至有人自定义了TabBar. 其实看看A">
+<meta name="description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.">
 <meta name="keywords" content="TabBar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hidesBottomBarWhenPushed用法">
 <meta property="og:url" content="https://historyzhang.github.io/2014/08/02/hidesBottomBarWhenPushed用法/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人. 正文在使用TabBar的时候,需要在push到下个页面的时候隐藏TabBar,再pop回来的时候显示TabBar.以前有很多博客是说使用hidden参数,不过总是有黑边,遂又有一堆博客解决如何去掉黑边,甚至有人自定义了TabBar. 其实看看A">
+<meta property="og:description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T13:37:44.000Z">
+<meta property="og:updated_time" content="2018-02-03T07:48:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hidesBottomBarWhenPushed用法">
-<meta name="twitter:description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人. 正文在使用TabBar的时候,需要在push到下个页面的时候隐藏TabBar,再pop回来的时候显示TabBar.以前有很多博客是说使用hidden参数,不过总是有黑边,遂又有一堆博客解决如何去掉黑边,甚至有人自定义了TabBar. 其实看看A">
+<meta name="twitter:description" content="前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.">
 
 
 
@@ -396,7 +396,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前两天看论坛又看到有人在问<code>hidesBottomBarWhenPushed</code>到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前两天看论坛又看到有人在问<code>hidesBottomBarWhenPushed</code>到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.<br><a id="more"></a></p>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在使用<code>TabBar</code>的时候,需要在<code>push</code>到下个页面的时候隐藏<code>TabBar</code>,再<code>pop</code>回来的时候显示<code>TabBar</code>.以前有很多博客是说使用<code>hidden</code>参数,不过总是有黑边,遂又有一堆博客解决如何去掉黑边,甚至有人自定义了<code>TabBar</code>.</p>
 <p>其实看看<code>API</code>就会发现有<code>hidesBottomBarWhenPushed</code>这个属性可以使用.不过很多人用了发现有点问题,比如有<code>A-&gt;B-&gt;C</code>这个<code>push</code>流程,其中<code>A</code>中有<code>TabBar</code>,<code>B</code>和<code>C</code>中需要隐藏,很多人从<code>A</code> <code>push</code>到 <code>B</code>是可以隐藏<code>TabBar</code>,可是<code>B</code> <code>push</code>到 <code>C</code>又冒出来了.或者从<code>C</code> <code>pop</code>到 <code>B</code>又冒出来了.反正就是不对.</p>
 <p>说到底,还是用法有误.<code>Apple</code>不会给一个错误的<code>API</code>的.其实你可以在<code>B</code>和<code>C</code>的<code>init</code>函数中使用<code>self.hidesBottomBarWhenPushed = YES</code>,这样就可以达到你想要的效果了.</p>

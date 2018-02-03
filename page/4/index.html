@@ -557,20 +557,12 @@
 
       
         
-          
-          博客也写了几篇了,一页显示有点长,于是就着手分页功能.顺便设置一下”继续阅读”的功能.
-
-分页
-
-找到source/index.html文件,找到这段代码:
-
-修改为:
-
-
-继续阅读
-
-打开_config.yml文件,找到excerpt_link字段,你可以修改为自己想要显示的文字,”继续阅读”或者”Read More”等.注意到excerpt_separator这个字段,内容是&lt;!--mo
-          ...
+          <p>博客也写了几篇了,一页显示有点长,于是就着手分页功能.顺便设置一下”继续阅读”的功能.</p>
+<ul>
+<li>分页</li>
+</ul>
+<p>找到<code>source/index.html</code>文件,找到这段代码:</p>
+<img src="/images/blog/page_before.png">
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/06/博客分页和阅读更多功能/#more" rel="contents">
@@ -728,7 +720,6 @@
       
         
           <p>iOS开发中如果使用Git来管理源代码,很多文件是不需要上传到服务器的,这时候我们就需要配置<code>.gitignore</code>文件.具体做法是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Xcode</span><br><span class="line">.DS_Store</span><br><span class="line">*/build/*</span><br><span class="line">*.pbxuser</span><br><span class="line">!default.pbxuser</span><br><span class="line">*.mode1v3</span><br><span class="line">!default.mode1v3</span><br><span class="line">*.mode2v3</span><br><span class="line">!default.mode2v3</span><br><span class="line">*.perspectivev3</span><br><span class="line">!default.perspectivev3</span><br><span class="line">xcuserdata</span><br><span class="line">profile</span><br><span class="line">*.moved-aside</span><br><span class="line">DerivedData</span><br><span class="line">.idea/</span><br><span class="line">*.hmap</span><br><span class="line">*.orig</span><br><span class="line"></span><br><span class="line"># CocoaPods</span><br><span class="line">Pods</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/04/iOS配置gitignore文件/#more" rel="contents">
@@ -885,43 +876,23 @@
 
       
         
-          
-          提交AppStore时有很多选项,不过都是英文的.这里收集一下,以备查阅.
-
-
-
-AppleContent Descriptions
-None
-Infrequent/Mild
-
-
-
-
-苹果内容描述
-不存在
-频繁或强烈的
-
-
-
-
-
-
-选项
-翻译
-
-
-
-
-Cartoon or Fantasy Violence
-卡通或幻想暴力
-
-
-Realistic Violence
-现实暴力
-
-
-Sexual Con
-          ...
+          <p>提交AppStore时有很多选项,不过都是英文的.这里收集一下,以备查阅.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">AppleContent Descriptions</th>
+<th style="text-align:left">None</th>
+<th style="text-align:left">Infrequent/Mild</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">苹果内容描述</td>
+<td style="text-align:left">不存在</td>
+<td style="text-align:left">频繁或强烈的</td>
+</tr>
+</tbody>
+</table>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/04/iOS提交AppStore时描述翻译/#more" rel="contents">
@@ -1078,12 +1049,7 @@ Sexual Con
 
       
         
-          
-          前言有时候会在真机和模拟器间切换,总是来回替换库到是很不方便.这样可以在开发的时候将真机和模拟器库何必为一个文件,等到发布的时候再替换为真机库即可.
-正文使用下面的命令即可合并两个静态库.
-1lipo -create /libXXSimulator.a /libXXOs.a -output /libXX.a
-使用的时候记得注意文件的路径.其中-create后的两个参数是真机和模拟器静态库的路径,-
-          ...
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有时候会在真机和模拟器间切换,总是来回替换库到是很不方便.这样可以在开发的时候将真机和模拟器库何必为一个文件,等到发布的时候再替换为真机库即可.<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/03/iOS合并真机和模拟器静态库/#more" rel="contents">
@@ -1240,11 +1206,7 @@ Sexual Con
 
       
         
-          
-          前言前两天看论坛又看到有人在问hidesBottomBarWhenPushed到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.
-正文在使用TabBar的时候,需要在push到下个页面的时候隐藏TabBar,再pop回来的时候显示TabBar.以前有很多博客是说使用hidden参数,不过总是有黑边,遂又有一堆博客解决如何去掉黑边,甚至有人自定义了TabBar.
-其实看看A
-          ...
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前两天看论坛又看到有人在问<code>hidesBottomBarWhenPushed</code>到底怎么用,为什么他用总是不对.所以在这里还是总结下,希望可以帮助更多的人.<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/02/hidesBottomBarWhenPushed用法/#more" rel="contents">
@@ -1401,11 +1363,10 @@ Sexual Con
 
       
         
-          
-          越来越发现博客访问速度超慢了,看了几篇博客说是google的问题,就把所有关于google的东西都删了,还是很慢.也参照过唐巧的技术博客象写程序一样写博客：搭建基于github的博客中:
-
-主要是修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉，否则由于GFW的原因，将会造成页面load很慢。
-          ...
+          <p>越来越发现博客访问速度超慢了,看了几篇博客说是<code>google</code>的问题,就把所有关于<code>google</code>的东西都删了,还是很慢.也参照过<a href="http://blog.devtang.com/" target="_blank" rel="external">唐巧</a>的技术博客<a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">象写程序一样写博客：搭建基于github的博客</a>中:</p>
+<ul>
+<li>主要是修改文件：_config.yml ，这个配置文件都有相应的注释。主要就是改一些博客头，作者名之类的东西。 注意最好把里面的twitter相关的信息全部删掉，否则由于GFW的原因，将会造成页面load很慢。</li>
+<li>修改定制文件/source/_includes/custom/head.html 把google的自定义字体去掉，原因同上。
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/08/01/GitHub博客访问超慢解决/#more" rel="contents">
@@ -1562,10 +1523,7 @@ Sexual Con
 
       
         
-          
-          看过很多圆形头像的APP了.比如最近QQ又更新了,头像都变成圆形的了.其实在iOS实现这个很简单,几句代码即可.下面还是贴出来以便查阅.
-12345[imageView.layer setCornerRadius:CGRectGetHeight(imageView.bounds) / 2];imageView.layer.masksToBounds = YES;// 下面两句是设置圆周的线条颜色,
-          ...
+          <p>看过很多圆形头像的APP了.比如最近QQ又更新了,头像都变成圆形的了.<br>其实在iOS实现这个很简单,几句代码即可.下面还是贴出来以便查阅.<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/07/29/圆形头像/#more" rel="contents">
@@ -1722,11 +1680,8 @@ Sexual Con
 
       
         
-          
-          前言Coding中不免要引入三方库,有时候会出现很多编译错误,在此收集一下.
-正文1.如下错误可在Other Link Flags添加-licucore解决
-12345678910111213141516171819202122232425262728293031323334353637Undefined symbols for architecture i386:  &quot;_u_error
-          ...
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Coding中不免要引入三方库,有时候会出现很多编译错误,在此收集一下.</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>1.如下错误可在<code>Other Link Flags</code>添加<code>-licucore</code>解决<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/07/27/引入三方库编译错误解决/#more" rel="contents">
@@ -1883,11 +1838,8 @@ Sexual Con
 
       
         
-          
-          看别人的源码无意中看到一个方法,是NSArray的实例方法:
-12- (void)makeObjectsPerformSelector:(SEL)aSelector;- (void)makeObjectsPerformSelector:(SEL)aSelector withObject:(id)argument;
-用处是让NSArray中的每一个元素都执行aSelector方法,还可以带参数arg
-          ...
+          <p>看别人的源码无意中看到一个方法,是<code>NSArray</code>的实例方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void)makeObjectsPerformSelector:(SEL)aSelector;</span><br><span class="line">- (void)makeObjectsPerformSelector:(SEL)aSelector withObject:(id)argument;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2014/07/23/NSArray对所有元素操作/#more" rel="contents">
