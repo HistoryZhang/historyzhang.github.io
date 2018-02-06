@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Swift关于!和?的Tip]]></title>
+    <url>%2F2018%2F02%2F06%2FSwift%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%8C%85%E7%9A%84Tip%2F</url>
+    <content type="text"><![CDATA[前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~ 哈哈~分享一些自己看到的小 Tip 给大家，让那些也才入门 Swift 的童鞋也能多了解一些~ 关于 ! 和 ?今天这里不打算介绍为什么 Swift 里面会有 ! 和 ?，有什么不明白的可以看看这里：Swift中 ！和 ？的区别及使用 现在我们看一个平时用到的例子：1234let width: Int? = 3var area: Int? area = width! * width! 为什么这里 let area = width! * width! 会有这么多的 ! 呢？因为机（愚）智（蠢）的 Xcode 建议我们这样写。最关键的是如果 width 真的就是 nil 会这么样呢？机智如你，会 Crash。 那保险一点的写法应该是这样子的：123456789let width: Int? = 3var area: Int?if let tmp = width &#123; area = tmp * tmp&#125;else &#123; area = nil&#125; 完全不符合 Swift 作为一门优雅的语言的称号。 Optional Map面对上面的问题，有个很优雅的写法，那就是 Optional Map。让我们先看一下 Optional 中关于 map 的声明。 123public enum Optional&lt;Wrapped&gt; : ExpressibleByNilLiteral &#123; public func map&lt;U&gt;(_ transform: (Wrapped) throws -&gt; U) rethrows -&gt; U?&#125; 该方法的作用是，如果输入有值，则进入 transform 的闭包进行变化，并返回一个 U? ;如果输入就是 nil 的话，则直接返回 nil 的 U?。 那么我们就有如下优雅的写法了：1234let width: Int? = 3let area = width.map &#123; $0 * $0&#125; 更多我们还能在 Collection 中看到 map 的身影。123456789101112131415161718192021extension Collection &#123; /// Returns an array containing the results of mapping the given closure /// over the sequence&apos;s elements. /// /// In this example, `map` is used first to convert the names in the array /// to lowercase strings and then to count their characters. /// /// let cast = [&quot;Vivien&quot;, &quot;Marlon&quot;, &quot;Kim&quot;, &quot;Karl&quot;] /// let lowercaseNames = cast.map &#123; $0.lowercaseString &#125; /// // &apos;lowercaseNames&apos; == [&quot;vivien&quot;, &quot;marlon&quot;, &quot;kim&quot;, &quot;karl&quot;] /// let letterCounts = cast.map &#123; $0.count &#125; /// // &apos;letterCounts&apos; == [6, 6, 3, 4] /// /// - Parameter transform: A mapping closure. `transform` accepts an /// element of this sequence as its parameter and returns a transformed /// value of the same or of a different type. /// - Returns: An array containing the transformed elements of this /// sequence. public func map&lt;T&gt;(_ transform: (Self.Element) throws -&gt; T) rethrows -&gt; [T]&#125; 注释的很清楚了，就不多介绍了。值得注意的是 Collection 本身是一个 protocol，所以所有实现了 Collection 协议的都有这个方法。]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Github源码索引]]></title>
     <url>%2F2018%2F01%2F27%2FGithub%E6%BA%90%E7%A0%81%E7%B4%A2%E5%BC%95%2F</url>
     <content type="text"><![CDATA[一、UI相关 NotificationBanner 通知栏提醒 DKImagePickerController 系统相册 SwipeCellKit 系统邮箱手势的Cell JTCalendar 日历 CVCalendar 日历 XLForm 表单系统 Eureka 表单系统二、Extension SwifterSwift三、工具 SwiftyJSON JSON转Model四、其他 英语进阶指南 12306ForMac 12306 订票/捡票 助手 跳一跳辅助 答题App辅助]]></content>
