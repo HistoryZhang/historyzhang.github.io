@@ -77,18 +77,18 @@
 
 
 
-<meta name="description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~  哈哈~分享一些自己看到的小 Tip 给大家，让那些也才入门 Swift 的童鞋也能多了解一些~ 关于 ! 和 ?今天这里不打算介绍为什么 Swift 里面会有 ! 和 ?，有什么不明白的可以看看这里：Swift中 ！和 ？">
+<meta name="description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~">
 <meta name="keywords" content="Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift关于!和?的Tip">
 <meta property="og:url" content="https://historyzhang.github.io/2018/02/06/Swift关于解包的Tip/index.html">
 <meta property="og:site_name" content="张清的iOS开发随笔">
-<meta property="og:description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~  哈哈~分享一些自己看到的小 Tip 给大家，让那些也才入门 Swift 的童鞋也能多了解一些~ 关于 ! 和 ?今天这里不打算介绍为什么 Swift 里面会有 ! 和 ?，有什么不明白的可以看看这里：Swift中 ！和 ？">
+<meta property="og:description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T13:46:37.000Z">
+<meta property="og:updated_time" content="2018-02-06T14:00:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift关于!和?的Tip">
-<meta name="twitter:description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~  哈哈~分享一些自己看到的小 Tip 给大家，让那些也才入门 Swift 的童鞋也能多了解一些~ 关于 ! 和 ?今天这里不打算介绍为什么 Swift 里面会有 ! 和 ?，有什么不明白的可以看看这里：Swift中 ！和 ？">
+<meta name="twitter:description" content="前言 Q: 为什么我现在还在写这些入门级别的语法 Tip 呢？ A: 因为我现在才开始学习 Swift 呗~ Q: 为什么我现在才开始学习 Swift 呢？ A: 因为懒呗~">
 
 
 
@@ -402,18 +402,23 @@
 <p>Q: 为什么我现在才开始学习 <code>Swift</code> 呢？</p>
 <p>A: 因为懒呗~</p>
 </blockquote>
+<a id="more"></a>
 <p>哈哈~分享一些自己看到的小 <code>Tip</code> 给大家，让那些也才入门 <code>Swift</code> 的童鞋也能多了解一些~</p>
 <h2 id="关于-和"><a href="#关于-和" class="headerlink" title="关于 ! 和 ?"></a>关于 <code>!</code> 和 <code>?</code></h2><p>今天这里不打算介绍为什么 <code>Swift</code> 里面会有 <code>!</code> 和 <code>?</code>，有什么不明白的可以看看这里：<a href="https://www.jianshu.com/p/89a2afb82488" target="_blank" rel="external">Swift中 ！和 ？的区别及使用
 </a></p>
-<p>现在我们看一个平时用到的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">var area: Int?</span><br><span class="line">    </span><br><span class="line">area = width! * width!</span><br></pre></td></tr></table></figure></p>
+<p>现在我们看一个平时用到的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">var area: Int?</span><br><span class="line">    </span><br><span class="line">area = width! * width!</span><br></pre></td></tr></table></figure>
 <p>为什么这里 <code>let area = width! * width!</code> 会有这么多的 <code>!</code> 呢？因为机（愚）智（蠢）的 <code>Xcode</code> 建议我们这样写。最关键的是如果 <code>width</code> 真的就是 <code>nil</code> 会这么样呢？机智如你，会 <code>Crash</code>。</p>
-<p>那保险一点的写法应该是这样子的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">var area: Int?</span><br><span class="line"></span><br><span class="line">if let tmp = width &#123;</span><br><span class="line">    area = tmp * tmp</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">    area = nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>那保险一点的写法应该是这样子的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">var area: Int?</span><br><span class="line"></span><br><span class="line">if let tmp = width &#123;</span><br><span class="line">    area = tmp * tmp</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">    area = nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>完全不符合 <code>Swift</code> 作为一门<code>优雅</code>的语言的称号。</p>
 <h2 id="Optional-Map"><a href="#Optional-Map" class="headerlink" title="Optional Map"></a>Optional Map</h2><p>面对上面的问题，有个很优雅的写法，那就是 <code>Optional Map</code>。让我们先看一下 <code>Optional</code> 中关于 <code>map</code> 的声明。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum Optional&lt;Wrapped&gt; : ExpressibleByNilLiteral &#123;</span><br><span class="line">    public func map&lt;U&gt;(_ transform: (Wrapped) throws -&gt; U) rethrows -&gt; U?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该方法的作用是，如果输入有值，则进入 <code>transform</code> 的闭包进行变化，并返回一个 <code>U?</code> ;如果输入就是 <code>nil</code> 的话，则直接返回 <code>nil</code> 的 <code>U?</code>。</p>
-<p>那么我们就有如下优雅的写法了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">let area = width.map &#123;</span><br><span class="line">    $0 * $0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>我们还能在 <code>Collection</code> 中看到 <code>map</code> 的身影。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">extension Collection &#123;</span><br><span class="line"></span><br><span class="line">    /// Returns an array containing the results of mapping the given closure</span><br><span class="line">    /// over the sequence&apos;s elements.</span><br><span class="line">    ///</span><br><span class="line">    /// In this example, `map` is used first to convert the names in the array</span><br><span class="line">    /// to lowercase strings and then to count their characters.</span><br><span class="line">    ///</span><br><span class="line">    ///     let cast = [&quot;Vivien&quot;, &quot;Marlon&quot;, &quot;Kim&quot;, &quot;Karl&quot;]</span><br><span class="line">    ///     let lowercaseNames = cast.map &#123; $0.lowercaseString &#125;</span><br><span class="line">    ///     // &apos;lowercaseNames&apos; == [&quot;vivien&quot;, &quot;marlon&quot;, &quot;kim&quot;, &quot;karl&quot;]</span><br><span class="line">    ///     let letterCounts = cast.map &#123; $0.count &#125;</span><br><span class="line">    ///     // &apos;letterCounts&apos; == [6, 6, 3, 4]</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameter transform: A mapping closure. `transform` accepts an</span><br><span class="line">    ///   element of this sequence as its parameter and returns a transformed</span><br><span class="line">    ///   value of the same or of a different type.</span><br><span class="line">    /// - Returns: An array containing the transformed elements of this</span><br><span class="line">    ///   sequence.</span><br><span class="line">    public func map&lt;T&gt;(_ transform: (Self.Element) throws -&gt; T) rethrows -&gt; [T]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>那么我们就有如下优雅的写法了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let width: Int? = 3</span><br><span class="line">let area = width.map &#123;</span><br><span class="line">    $0 * $0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>我们还能在 <code>Collection</code> 中看到 <code>map</code> 的身影。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">extension Collection &#123;</span><br><span class="line"></span><br><span class="line">    /// Returns an array containing the results of mapping the given closure</span><br><span class="line">    /// over the sequence&apos;s elements.</span><br><span class="line">    ///</span><br><span class="line">    /// In this example, `map` is used first to convert the names in the array</span><br><span class="line">    /// to lowercase strings and then to count their characters.</span><br><span class="line">    ///</span><br><span class="line">    ///     let cast = [&quot;Vivien&quot;, &quot;Marlon&quot;, &quot;Kim&quot;, &quot;Karl&quot;]</span><br><span class="line">    ///     let lowercaseNames = cast.map &#123; $0.lowercaseString &#125;</span><br><span class="line">    ///     // &apos;lowercaseNames&apos; == [&quot;vivien&quot;, &quot;marlon&quot;, &quot;kim&quot;, &quot;karl&quot;]</span><br><span class="line">    ///     let letterCounts = cast.map &#123; $0.count &#125;</span><br><span class="line">    ///     // &apos;letterCounts&apos; == [6, 6, 3, 4]</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameter transform: A mapping closure. `transform` accepts an</span><br><span class="line">    ///   element of this sequence as its parameter and returns a transformed</span><br><span class="line">    ///   value of the same or of a different type.</span><br><span class="line">    /// - Returns: An array containing the transformed elements of this</span><br><span class="line">    ///   sequence.</span><br><span class="line">    public func map&lt;T&gt;(_ transform: (Self.Element) throws -&gt; T) rethrows -&gt; [T]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注释的很清楚了，就不多介绍了。值得注意的是 <code>Collection</code> 本身是一个 <code>protocol</code>，所以所有实现了 <code>Collection</code> 协议的都有这个方法。</p>
 
       
@@ -509,6 +514,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/07/公众号推荐/" rel="prev" title="公众号推荐">
+                公众号推荐 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -637,7 +646,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +668,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
